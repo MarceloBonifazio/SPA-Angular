@@ -1,0 +1,95 @@
+<div class="row">
+	<div class="col-4">
+		<div class="input-group mb-3">
+			<div class="input-group-prepend text-primary">
+				<label for="per_page" class="control-label">ITENS POR PÁGINA:</label> 
+			</div>
+			<select id="per_page" name="per_page" class="select form-control">
+				<option value="100">100</option>
+				<option value="80">80</option>
+				<option value="60">60</option>
+				<option value="40">40</option>
+				<option value="20">20</option>
+				<option value="10">10</option>
+				<option value="5">5</option>
+			</select>
+		</div>
+	</div>
+	<div class="col-4">
+		<div class="input-group mb-3 border">
+			<div class="input-group-prepend text-primary">
+				<label for="ordering" class="control-label">ORDENAR POR:</label> 
+			</div>
+			<select id="ordering" name="ordering" class="select form-control">
+				<option value="price">Menor Preço</option>
+			</select>
+		</div>
+	</div>
+	<div class="col-4">
+		<div class="input-group mb-3 border">
+			<div class="input-group-prepend text-primary">
+				<label for="currency" class="control-label">MOEDA:</label> 
+			</div>
+			<select id="currency" name="currency" class="select form-control">
+				<option value="real">Real</option>
+				<option value="dolar">Dólar</option>
+			</select>
+		</div>
+	</div>
+</div>
+<div class="row mt-4" *ngFor="let ad of ads">
+	<div class="col-8">
+		<div class="row">
+			<div class="col-12">{{ ad.loja }}</div>
+			<div class="col-12">
+					<button class="btn btn-link" (click)="ad.id = !ad.id"
+          [attr.aria-expanded]="!ad.id" aria-controls="collapseExample">
+						<i class="fa" aria-hidden="true"></i>
+            Detalhes
+          </button>
+					<div [ngbCollapse]="ad.id">
+						{{ ad.descricao }}
+					</div>
+			</div>
+			<div class="col-12">Adicionais</div>
+		</div>
+	</div>
+	<div class="col-4 text-gold bg-yellow text-center">
+		<p>
+			TOTAL DA LOCAÇÃO
+		</p>
+		<p class="strikethrough" *ngIf="ad.desconto > 0">
+			de R$ {{ ad.valor_total }}
+		</p>
+		<p *ngIf="ad.desconto > 0">
+			por R$ {{ ad.valor_total - ( ad.valor_total * ( ad.desconto / 100 ) ) }}
+		</p>
+		<p *ngIf="ad.desconto == 0">
+			R$ {{ ad.valor_total }}
+		</p>
+		<p>
+			em até 10x
+		</p>
+		<div class="col-12 rigth-arrow">
+			<button name="submit" type="submit" class="btn btn-block btn-primary">ALUGAR</button>
+		</div>
+		<p>
+			Taxas inclusas
+		</p>
+	</div>
+</div>
+<div class="row">
+	<ul class="pagination pagination-md">
+		<li class="disabled"><a href="#">«</a></li>
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li class="active"><a href="#">5</a></li>
+		<li><a href="#">6</a></li>
+		<li><a href="#">7</a></li>
+		<li><a href="#">8</a></li>
+		<li><a href="#">...</a></li>
+		<li><a href="#" rel="next">»</a></li>
+	</ul>
+</div>

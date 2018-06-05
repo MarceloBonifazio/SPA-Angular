@@ -1,0 +1,56 @@
+[
+	{
+      "id": 1,
+      "loja": "budget",
+      "imagem_principal": "",
+      "imagens": "",
+      "cod_taxa": "IFMR",
+      "tags": [
+        "Chevrolet Celta",
+        "Ford Fiesta",
+        "Vw Gol",
+        "ChevroletFiat ou Similar"
+      ],
+			"detalhes": [
+			],
+      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis accumsan gravida. Praesent ultricies aliquam leo, ac tempus lectus tempus non. Cras interdum euismod mi, nec fermentum dolor mattis eget. Vivamus maximus semper libero, vel tincidunt augue.",
+      "valor_total": 848.4,
+      "desconto": 20
+    },
+		{
+      "id": 2,
+      "loja": "hertz",
+      "imagem_principal": "",
+      "imagens": "",
+      "cod_taxa": "IFMR",
+      "tags": [
+        "Chevrolet Celta",
+        "Ford Fiesta",
+        "Vw Gol",
+        "ChevroletFiat ou Similar"
+      ],
+			"detalhes": [
+			],
+      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis accumsan gravida. Praesent ultricies aliquam leo, ac tempus lectus tempus non. Cras interdum euismod mi, nec fermentum dolor mattis eget. Vivamus maximus semper libero, vel tincidunt augue.",
+      "valor_total": 848.4,
+      "desconto": 0
+    },
+		{
+      "id": 3,
+      "loja": "europcar",
+      "imagem_principal": "",
+      "imagens": "",
+      "cod_taxa": "IFMR",
+      "tags": [
+        "Chevrolet Celta",
+        "Ford Fiesta",
+        "Vw Gol",
+        "ChevroletFiat ou Similar"
+      ],
+			"detalhes": [
+			],
+      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis accumsan gravida. Praesent ultricies aliquam leo, ac tempus lectus tempus non. Cras interdum euismod mi, nec fermentum dolor mattis eget. Vivamus maximus semper libero, vel tincidunt augue.",
+      "valor_total": 848.4,
+      "desconto": 0
+    }
+]

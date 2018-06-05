@@ -1,0 +1,96 @@
+<div class="card mb-3">
+	<div class="card-body text-gold bg-yellow">
+		<div class="col-12">
+			<label for="local_retirada">LOCAL DE RETIRADA</label> 
+			<select id="local_retirada" name="local_retirada" class="custom-select">
+				<option value="sp">São Paulo - São Paulo / BR, Brasil</option>
+				<option value="rs">Rio de Janeiro - Rio de Janeiro / BR, Brasil</option>
+			</select>
+		</div>
+		<div class="col-12">
+			<div class="text-primary">
+				<label class="custom-control custom-checkbox">
+					<input name="checkbox" type="checkbox" checked="checked" class="custom-control-input" value="outro_lugar"> 
+					<span class="custom-control-indicator"></span> 
+					<span class="custom-control-description">Devolver o carro em outro lugar</span>
+				</label>
+			</div>
+		</div>
+		<div class="col-12">
+			<label for="local_devolucao">LOCAL DE DEVOLUÇÃO</label> 
+			<div>
+				<select id="local_devolucao" name="local_devolucao" class="custom-select">
+					<option value="sp">São Paulo - São Paulo / BR, Brasil</option>
+					<option value="rj">Rio de Janeiro - Rio de Janeiro / BR, Brasil</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-12">
+			<label for="retirada">RETIRADA</label> 
+			<div class="input-group">
+				<input id="retirada" name="retirada" type="text" class="form-control here"> 
+				<div class="input-group-addon append">
+					<i class="fa fa-calendar-o"></i>
+				</div>
+				<select id="hora_retirada" name="hora_retirada" class="custom-select">
+					<option value="0">00:00</option>
+					<option value="1">01:00</option>
+					<option value="2">02:00</option>
+					<option value="3">03:00</option>
+					<option value="4">04:00</option>
+					<option value="5">05:00</option>
+					<option value="6">06:00</option>
+					<option value="7">07:00</option>
+					<option value="8">08:00</option>
+					<option value="9">09:00</option>
+					<option value="10">10:00</option>
+					<option value="11">11:00</option>
+					<option value="12">12:00</option>
+					<option value="13">13:00</option>
+					<option value="14">14:00</option>
+					<option value="15">15:00</option>
+					<option value="16">16:00</option>
+					<option value="17">17:00</option>
+					<option value="18">18:00</option>
+					<option value="19">19:00</option>
+					<option value="20">20:00</option>
+					<option value="21">21:00</option>
+					<option value="22">22:00</option>
+					<option value="23">23:00</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-12">
+			<label for="devolucao">DEVOLUÇÃO - 8 DIA(S)</label> 
+			<div class="input-group">
+				<input [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3">
+				<owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time> 
+				<div class="input-group-addon append">
+					<i class="fa fa-calendar-o"></i>
+				</div>
+				<input [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4">
+				<owl-date-time [pickerType]="'timer'" #dt4></owl-date-time>
+			</div>
+		</div>
+		<div class="col-12">
+			<div class="bg-success text-white">
+				<label>ECONOMIZE ATÉ 35%</label> 
+				<div class="bg-shallimar text-primary">
+					<label class="custom-control custom-checkbox">
+						<input name="" type="checkbox" class="custom-control-input" value="voo"> 
+						<span class="custom-control-indicator"></span> 
+						<span class="custom-control-description">Incluir voo</span>
+					</label>
+					<label class="custom-control custom-checkbox">
+						<input name="" type="checkbox" class="custom-control-input" value="hotel"> 
+						<span class="custom-control-indicator"></span> 
+						<span class="custom-control-description">Incluir hotel</span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="col-12">
+			<button name="submit" type="submit" class="btn btn-block btn-primary">BUSCAR</button>
+		</div>
+	</div>
+</div>
