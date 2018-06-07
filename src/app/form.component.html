@@ -1,81 +1,154 @@
-<div class="card mb-3">
+<div class="card">
 	<div class="card-body text-gold bg-yellow">
-		<div class="col-12">
-			<label for="local_retirada">LOCAL DE RETIRADA</label> 
-			<select id="local_retirada" name="local_retirada" class="custom-select">
-				<option value="sp">São Paulo - São Paulo / BR, Brasil</option>
-				<option value="rs">Rio de Janeiro - Rio de Janeiro / BR, Brasil</option>
-			</select>
+		<div class="col-12 mt-2">
+			<label for="local_retirada" class="mb-0">LOCAL DE RETIRADA</label> 
+			<input type="text" id="local_retirada" name="local_retirada" class="form-control" placeholder="São Paulo - São Paulo / BR, Brasil">
 		</div>
-		<div class="col-12">
+		<div class="col-12 mt-2">
 			<div class="text-primary">
 				<label class="custom-control custom-checkbox">
-					<input name="checkbox" type="checkbox" checked="checked" class="custom-control-input" value="outro_lugar"> 
+					<input name="checkbox" type="checkbox" class="custom-control-input" [checked]="otherPlace" (change)="otherPlace = !otherPlace" value="outro_lugar"> 
 					<span class="custom-control-indicator"></span> 
-					<span class="custom-control-description">Devolver o carro em outro lugar</span>
+					<span class="custom-control-description font-weight-bold">Devolver o carro em outro lugar</span>
 				</label>
 			</div>
 		</div>
-		<div class="col-12">
-			<label for="local_devolucao">LOCAL DE DEVOLUÇÃO</label> 
-			<div>
-				<select id="local_devolucao" name="local_devolucao" class="custom-select">
-					<option value="sp">São Paulo - São Paulo / BR, Brasil</option>
-					<option value="rj">Rio de Janeiro - Rio de Janeiro / BR, Brasil</option>
-				</select>
-			</div>
+		<div class="col-12 mt-2" *ngIf="otherPlace">
+			<label for="local_devolucao" class="mb-0">LOCAL DE DEVOLUÇÃO</label>
+			<input type="text" id="local_devolucao" name="local_devolucao" class="form-control" placeholder="Rio de Janeiro - Rio de Janeiro / BR, Brasil">			
 		</div>
-		<div class="col-12">
-			<label for="retirada">RETIRADA</label> 
+		<div class="col-12 mt-2">
+			<label for="retirada" class="mb-0">RETIRADA</label> 
 			<div class="input-group">
-				<input id="retirada" name="retirada" type="text" class="form-control here"> 
-				<div class="input-group-addon append">
+				<!--
+					<input [owlDateTimeTrigger]="dt_retirada" [owlDateTime]="dt_retirada"
+						 [min]="min" [max]="max"
+						 [selectMode]="'rangeFrom'" class="form-control dt-border">
+					<owl-date-time [pickerType]="'calendar'" [pickerMode]="'dialog'" #dt_retirada></owl-date-time> 
+				-->
+				<div class="input-group-addon text-primary bg-white cl-border">
 					<i class="fa fa-calendar-o"></i>
 				</div>
-				<select id="hora_retirada" name="hora_retirada" class="custom-select">
+				<select id="hr_retirada" name="hr_retirada" class="custom-select hr-border">
 					<option value="0">00:00</option>
-					<option value="1">01:00</option>
-					<option value="2">02:00</option>
-					<option value="3">03:00</option>
-					<option value="4">04:00</option>
-					<option value="5">05:00</option>
-					<option value="6">06:00</option>
-					<option value="7">07:00</option>
-					<option value="8">08:00</option>
-					<option value="9">09:00</option>
-					<option value="10">10:00</option>
-					<option value="11">11:00</option>
-					<option value="12">12:00</option>
-					<option value="13">13:00</option>
-					<option value="14">14:00</option>
-					<option value="15">15:00</option>
-					<option value="16">16:00</option>
-					<option value="17">17:00</option>
-					<option value="18">18:00</option>
-					<option value="19">19:00</option>
-					<option value="20">20:00</option>
-					<option value="21">21:00</option>
-					<option value="22">22:00</option>
-					<option value="23">23:00</option>
+					<option value="30">00:30</option>
+					<option value="60">01:00</option>
+					<option value="90">01:30</option>
+					<option value="120">02:00</option>
+					<option value="150">02:30</option>
+					<option value="180">03:00</option>
+					<option value="210">03:30</option>
+					<option value="240">04:00</option>
+					<option value="270">04:30</option>
+					<option value="300">05:00</option>
+					<option value="330">05:30</option>
+					<option value="360">06:00</option>
+					<option value="390">06:30</option>
+					<option value="420">07:00</option>
+					<option value="450">07:30</option>
+					<option value="480">08:00</option>
+					<option value="510">08:30</option>
+					<option value="540">09:00</option>
+					<option value="570">09:30</option>
+					<option value="600">10:00</option>
+					<option value="630">10:30</option>
+					<option value="660">11:00</option>
+					<option value="690">11:30</option>
+					<option value="720">12:00</option>
+					<option value="750">12:30</option>
+					<option value="780">13:00</option>
+					<option value="810">13:30</option>
+					<option value="840">14:00</option>
+					<option value="870">14:30</option>
+					<option value="900">15:00</option>
+					<option value="930">15:30</option>
+					<option value="960">16:00</option>
+					<option value="990">16:30</option>
+					<option value="1020">17:00</option>
+					<option value="1050">17:30</option>
+					<option value="1080">18:00</option>
+					<option value="1110">18:30</option>
+					<option value="1140">19:00</option>
+					<option value="1170">19:30</option>
+					<option value="1200">20:00</option>
+					<option value="1230">20:30</option>
+					<option value="1260">21:00</option>
+					<option value="1290">21:30</option>
+					<option value="1320">22:00</option>
+					<option value="1350">22:30</option>
+					<option value="1380">23:00</option>
+					<option value="1410">23:30</option>
 				</select>
 			</div>
 		</div>
-		<div class="col-12">
-			<label for="devolucao">DEVOLUÇÃO - 8 DIA(S)</label> 
+		<div class="col-12 mt-2">
+			<label for="devolucao" class="mb-0">DEVOLUÇÃO - 8 DIA(S)</label> 
 			<div class="input-group">
-				<input [owlDateTimeTrigger]="dt3" [owlDateTime]="dt3">
-				<owl-date-time [pickerType]="'calendar'" #dt3></owl-date-time> 
-				<div class="input-group-addon append">
+				<!--
+					<input [owlDateTimeTrigger]="dt_devolucao" [owlDateTime]="dt_devolucao"
+						 [min]="min" [max]="max"
+						 [selectMode]="'rangeTo'" class="form-control dt-border">
+					<owl-date-time [pickerType]="'calendar'" [pickerMode]="'dialog'" #dt_devolucao></owl-date-time>
+				-->				
+				<div class="input-group-addon text-primary bg-white cl-border">
 					<i class="fa fa-calendar-o"></i>
 				</div>
-				<input [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4">
-				<owl-date-time [pickerType]="'timer'" #dt4></owl-date-time>
+				<select id="hr_devolucao" name="hr_devolucao" class="custom-select hr-border">
+					<option value="0">00:00</option>
+					<option value="30">00:30</option>
+					<option value="60">01:00</option>
+					<option value="90">01:30</option>
+					<option value="120">02:00</option>
+					<option value="150">02:30</option>
+					<option value="180">03:00</option>
+					<option value="210">03:30</option>
+					<option value="240">04:00</option>
+					<option value="270">04:30</option>
+					<option value="300">05:00</option>
+					<option value="330">05:30</option>
+					<option value="360">06:00</option>
+					<option value="390">06:30</option>
+					<option value="420">07:00</option>
+					<option value="450">07:30</option>
+					<option value="480">08:00</option>
+					<option value="510">08:30</option>
+					<option value="540">09:00</option>
+					<option value="570">09:30</option>
+					<option value="600">10:00</option>
+					<option value="630">10:30</option>
+					<option value="660">11:00</option>
+					<option value="690">11:30</option>
+					<option value="720">12:00</option>
+					<option value="750">12:30</option>
+					<option value="780">13:00</option>
+					<option value="810">13:30</option>
+					<option value="840">14:00</option>
+					<option value="870">14:30</option>
+					<option value="900">15:00</option>
+					<option value="930">15:30</option>
+					<option value="960">16:00</option>
+					<option value="990">16:30</option>
+					<option value="1020">17:00</option>
+					<option value="1050">17:30</option>
+					<option value="1080">18:00</option>
+					<option value="1110">18:30</option>
+					<option value="1140">19:00</option>
+					<option value="1170">19:30</option>
+					<option value="1200">20:00</option>
+					<option value="1230">20:30</option>
+					<option value="1260">21:00</option>
+					<option value="1290">21:30</option>
+					<option value="1320">22:00</option>
+					<option value="1350">22:30</option>
+					<option value="1380">23:00</option>
+					<option value="1410">23:30</option>
+				</select>
 			</div>
 		</div>
-		<div class="col-12">
-			<div class="bg-success text-white">
-				<label>ECONOMIZE ATÉ 35%</label> 
-				<div class="bg-shallimar text-primary">
+		<div class="col-12 mt-2">
+			<div class="text-white align-middle bg-success">
+				<label class="pt-2 pl-2">ECONOMIZE ATÉ 35%</label> 
+				<div class="bg-shallimar text-primary pt-2 pl-2">
 					<label class="custom-control custom-checkbox">
 						<input name="" type="checkbox" class="custom-control-input" value="voo"> 
 						<span class="custom-control-indicator"></span> 
@@ -89,8 +162,55 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-12">
+		<div class="col-12 mt-2 mb-2">
 			<button name="submit" type="submit" class="btn btn-block btn-primary">BUSCAR</button>
 		</div>
 	</div>
 </div>
+
+<hr/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+<input class="form-control" placeholder="yyyy-mm-dd" name="dp" 
+	[(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+<button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
+	Click!
+</button>
+
+<ngb-datepicker #dp (select)="onDateSelection($event)" [dayTemplate]="t">
+</ngb-datepicker>
+
+<ng-template #t let-date="date" let-focused="focused">
+	<span class="custom-day"
+				[class.focused]="focused"
+				[class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
+				[class.faded]="isHovered(date) || isInside(date)"
+				(mouseenter)="hoveredDate = date"
+				(mouseleave)="hoveredDate = null">
+		{{ date.day }}
+	</span>
+</ng-template>
+
+<hr>
+
+<pre>From: {{ fromDate | json }} </pre>
+<pre>To: {{ toDate | json }} </pre>
+

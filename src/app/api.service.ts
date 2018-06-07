@@ -15,4 +15,9 @@ export class ApiService {
 	getAds(): Observable<Ads[]>{
 		return this.http.get<Ads[]>(this._url);
 	}
+	
+	getCurrency(locale: string) { 
+		return this.http.get('https://free.currencyconverterapi.com/api/v5/convert?q='+locale+'&compact=y');
+	}
+	
 }

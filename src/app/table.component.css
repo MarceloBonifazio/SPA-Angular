@@ -1,65 +1,188 @@
-.bugdet {
-    left: 63px;
-    width: 43px;
-    background: url('/assets/stores.png') -47px 0;
-}
-
-.europcar {
-    left: 129px;
-    width: 43px;
-    background: url('/assets/stores.png') -91px 0;
-}
-
-.hertz {
-    left: 129px;
-    width: 43px;
-    background: url('/assets/stores.png') -91px 0;
+.alamo {
+	width: 81px; 
+	height: 41px;
+	background: url('/assets/stores.png') -10px -10px;
 }
 
 .avis {
-    left: 129px;
-    width: 43px;
-    background: url('/assets/stores.png') -91px 0;
+	width: 73px;
+	height: 31px;
+	background: url('/assets/stores.png') -10px -132px;
 }
 
-.alamo {
-    left: 129px;
-    width: 43px;
-    background: url('/assets/stores.png') -91px 0;
+.budget {
+	width: 74px; 
+	height: 21px;
+	background: url('/assets/stores.png') -103px -132px;
+}
+
+.europcar {
+	width: 81px; 
+	height: 41px;
+	background: url('/assets/stores.png') -111px -10px;
+}
+
+.hertz {
+	width: 81px; 
+	height: 31px;
+	background: url('/assets/stores.png') -111px -71px;
 }
 
 .national {
-    left: 129px;
-    width: 43px;
-    background: url('/assets/stores.png') -91px 0;
+	width: 81px; 
+	height: 41px;
+	background: url('/assets/stores.png') -10px -71px;
 }
 
-[data-toggle="collapse"] .fa:before {  
-  content: "\f067";
+.discount {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  overflow: hidden;
+  border: none;
+  font: normal normal bold 16px/1 "Times New Roman", Times, serif;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background: #39C15C;
 }
 
-[data-toggle="collapse"].collapsed .fa:before {
-  content: "\f00d";
+button[aria-expanded="true"] .fa:before {  
+	content: "\f00d  Fechar detalhes";
 }
 
-.pagination li {
-	display: inline-block;
+button[aria-expanded="false"] .fa:before {  
+	content: "\f067  Ver detalhes";
 }
 
-.pagination a {
-	color: black;
-	float: left;
-	padding: 8px 16px;
-	text-decoration: none;
+ul.dashed {
+  list-style-type: none;
 }
 
-.pagination li a.active {
-	background-color: #4CAF50;
-	color: white;
-	border-radius: 5px;
+ul.dashed > li {
+  text-indent: -5px;
 }
 
-.pagination a:hover:not(.active) {
-	background-color: #ddd;
-	border-radius: 5px;
+ul.dashed > li:before {
+  content: "-";
+  text-indent: -5px;
+}
+
+.rigth-arrow:after {
+	z-index: 1;
+	position: absolute;
+	top: 10px;
+	left: -20px;
+	margin-left: 0px;
+	content: '';
+	width: 0;
+	height: 0;
+	border-top: solid 10px transparent;
+	border-bottom: solid 10px transparent;
+	border-left: solid 10px #fff;
+}
+.top-arrow:after {
+	z-index: 10;
+	position: absolute;
+	top: -10px;
+	left: 43%;
+	margin-left: -0;
+	content:'';
+	width: 0;
+	height: 0;
+	border-bottom: solid 10px #659EC7;
+	border-left: solid 10px transparent;
+	border-right: solid 10px transparent;
+}
+
+.strikethrough {
+	text-decoration: line-through #eb1b00;
+	text-decoration-line: line-through;
+	text-decoration-style: initial;
+	text-decoration-color: rgb(235, 27, 0);
+}
+
+.component_1 {
+	width: 24px;
+	height: 19px;
+	padding-left: 24px;
+	white-space: nowrap;
+	background: url('/assets/components.png') -10px -10px;
+}
+
+.component_2 {
+	width: 24px; 
+	height: 19px;
+	padding-left: 24px;
+	white-space: nowrap;
+	background: url('/assets/components.png') -54px -10px;
+}
+
+.component_3 {
+	width: 24px; 
+	height: 19px;
+	padding-left: 24px;
+	white-space: nowrap;
+	background: url('/assets/components.png') -10px -49px;
+}
+
+.component_4 {
+	width: 24px; 
+	height: 19px;
+	padding-left: 24px;
+	white-space: nowrap;
+	background: url('/assets/components.png') -54px -49px;
+}
+
+.component_5 {
+	width: 24px;
+	height: 19px;
+	padding-left: 24px;
+	white-space: nowrap;
+	background: url('/assets/components.png') -98px -10px;
+}
+
+.component_6 {
+	width: 24px; 
+	height: 19px;
+	padding-left: 24px;
+	white-space: nowrap;
+	background: url('/assets/components.png') -98px -49px;
+}
+
+.component_7 {
+	width: 24px; 
+	height: 19px;
+	padding-left: 24px;
+	white-space: nowrap;
+	background: url('/assets/components.png') -10px -88px;
+}
+
+.component_8 {
+	width: 24px; 
+	height: 19px;
+	padding-left: 24px;
+	white-space: nowrap;
+	background: url('/assets/components.png') -54px -88px;
+}
+
+.component_9 {
+	width: 24px; 
+	height: 19px;
+	padding-left: 24px;
+	white-space: nowrap;
+	background: url('/assets/components.png') -98px -88px;
+}
+
+.text-muted {
+	color: #6c757d!important;
+}
+
+.text-muted:hover {
+	color: #d9534f!important;
+}
+
+.text-danger:hover {
+	color: #6c757d!important;
 }

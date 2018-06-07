@@ -1,9 +1,10 @@
 [
 	{
       "id": 1,
-      "loja": "budget",
-      "imagem_principal": "",
-      "imagens": "",
+      "favoritado": true,
+      "loja": "hertz",
+      "nome": "CARRO ECONÔMICO COM AR",
+      "imagem": "assets/car1.png",
       "cod_taxa": "IFMR",
       "tags": [
         "Chevrolet Celta",
@@ -12,16 +13,30 @@
         "ChevroletFiat ou Similar"
       ],
 			"detalhes": [
+				"Quilometragem livre",
+        "Seguro total do veículo",
+        "Seguro a terceiros",
+        "Taxas de serviço inclusas"
 			],
       "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis accumsan gravida. Praesent ultricies aliquam leo, ac tempus lectus tempus non. Cras interdum euismod mi, nec fermentum dolor mattis eget. Vivamus maximus semper libero, vel tincidunt augue.",
-      "valor_total": 848.4,
-      "desconto": 20
-    },
+      "valor_total": 938,
+      "desconto": 20,
+			"qtd_ocupantes": 5,
+			"qtd_portas": 4,
+			"qtd_malas": 3,
+			"ar_condicionado": true,
+			"dir_hidraulica": true,
+			"auto": true,
+			"vid_eletrico": true,
+			"cd_usb": true,
+			"am_fm": true
+    },	
 		{
       "id": 2,
-      "loja": "hertz",
-      "imagem_principal": "",
-      "imagens": "",
+			"favoritado": false,
+      "loja": "budget",
+			"nome": "CARRO ECONÔMICO COM AR",
+      "imagem": "assets/car2.png",
       "cod_taxa": "IFMR",
       "tags": [
         "Chevrolet Celta",
@@ -30,27 +45,22 @@
         "ChevroletFiat ou Similar"
       ],
 			"detalhes": [
+				"Quilometragem livre",
+        "Seguro total do veículo",
+        "Seguro a terceiros",
+        "Taxas de serviço inclusas"
 			],
       "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis accumsan gravida. Praesent ultricies aliquam leo, ac tempus lectus tempus non. Cras interdum euismod mi, nec fermentum dolor mattis eget. Vivamus maximus semper libero, vel tincidunt augue.",
-      "valor_total": 848.4,
-      "desconto": 0
-    },
-		{
-      "id": 3,
-      "loja": "europcar",
-      "imagem_principal": "",
-      "imagens": "",
-      "cod_taxa": "IFMR",
-      "tags": [
-        "Chevrolet Celta",
-        "Ford Fiesta",
-        "Vw Gol",
-        "ChevroletFiat ou Similar"
-      ],
-			"detalhes": [
-			],
-      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis accumsan gravida. Praesent ultricies aliquam leo, ac tempus lectus tempus non. Cras interdum euismod mi, nec fermentum dolor mattis eget. Vivamus maximus semper libero, vel tincidunt augue.",
-      "valor_total": 848.4,
-      "desconto": 0
+      "valor_total": 838,
+      "desconto": 0,
+			"qtd_ocupantes": 5,
+			"qtd_portas": 4,
+			"qtd_malas": 3,
+			"ar_condicionado": true,
+			"dir_hidraulica": false,
+			"auto": true,
+			"vid_eletrico": false,
+			"cd_usb": false,
+			"am_fm": false
     }
 ]

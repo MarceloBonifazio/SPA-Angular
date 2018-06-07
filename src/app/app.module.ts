@@ -1,15 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { registerLocaleData  } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FormComponent } from './form.component';
 import { TableComponent } from './table.component';
-// import { PagerService } from './pager';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import localePt from '@angular/common/locales/pt';
 
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -23,12 +25,13 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
     BrowserAnimationsModule,
 		FormsModule,
 		HttpClientModule,
-		OwlDateTimeModule, 
-		OwlNativeDateTimeModule
+		NgxPaginationModule,
   ],
   providers: [
-		// PagerService
+		{ provide: LOCALE_ID, useValue: 'pt' },
 	],
-  bootstrap: [AppComponent]
+  bootstrap: [
+		AppComponent
+	]
 })
 export class AppModule { }

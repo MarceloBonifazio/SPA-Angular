@@ -1,10 +1,9 @@
 <div class="row">
-	<div class="col-4">
+	<div class="col-12 col-md-6 col-lg-4">
 		<div class="input-group mb-3">
-			<div class="input-group-prepend text-primary">
-				<label for="per_page" class="control-label">ITENS POR PÁGINA:</label> 
-			</div>
-			<select id="per_page" name="per_page" class="select form-control">
+			<span for="per_page" class="input-group-addon text-primary bg-white">ITENS POR PÁGINA:</span>
+			<select id="per_page" name="per_page" class="select form-control" 
+			(change)="changePerPage($event.target.value)" [(ngModel)]="perPage">
 				<option value="100">100</option>
 				<option value="80">80</option>
 				<option value="60">60</option>
@@ -15,81 +14,135 @@
 			</select>
 		</div>
 	</div>
-	<div class="col-4">
-		<div class="input-group mb-3 border">
-			<div class="input-group-prepend text-primary">
-				<label for="ordering" class="control-label">ORDENAR POR:</label> 
-			</div>
+	<div class="col-12 col-md-6 col-lg-4">
+		<div class="input-group mb-3">
+			<span for="ordering" class="input-group-addon text-primary bg-white">ORDENAR POR:</span> 
 			<select id="ordering" name="ordering" class="select form-control">
 				<option value="price">Menor Preço</option>
 			</select>
 		</div>
 	</div>
-	<div class="col-4">
-		<div class="input-group mb-3 border">
-			<div class="input-group-prepend text-primary">
-				<label for="currency" class="control-label">MOEDA:</label> 
-			</div>
-			<select id="currency" name="currency" class="select form-control">
-				<option value="real">Real</option>
-				<option value="dolar">Dólar</option>
+	<div class="col-12 col-md-12 col-lg-4">
+		<div class="input-group mb-3">
+			<span for="currency" class="input-group-addon text-primary bg-white">MOEDA:</span> 
+			<select id="currency" name="currency" class="select form-control" 
+			(change)="changeCurrency($event.target.value)" [(ngModel)]="currency">
+				<option disabled selected>Moeda</option>
+				<option value="BRL_BRL">Real</option>
+				<option value="BRL_USD">Dólar</option>
 			</select>
 		</div>
 	</div>
 </div>
-<div class="row mt-4" *ngFor="let ad of ads">
-	<div class="col-8">
-		<div class="row">
-			<div class="col-12">{{ ad.loja }}</div>
-			<div class="col-12">
-					<button class="btn btn-link" (click)="ad.id = !ad.id"
-          [attr.aria-expanded]="!ad.id" aria-controls="collapseExample">
-						<i class="fa" aria-hidden="true"></i>
-            Detalhes
-          </button>
-					<div [ngbCollapse]="ad.id">
-						{{ ad.descricao }}
+<div class="mt-4" *ngFor="let ad of ads | paginate: { itemsPerPage: perPage, currentPage: page }">
+	<div class="row">
+		<div class="col-10 border-top border-left">
+			<div class="row">
+				<div class="col-4">
+					<div *ngIf="ad.desconto > 0" class="discount float-left p-2 rounded" ngbTooltip="Desconto">
+						- {{ ad.desconto }}%
 					</div>
+					<div class="float-right {{ ad.loja }} mb-2 mt-2"></div>
+					<img src="{{ ad.imagem }}" alt="Carro"/>
+				</div>
+				<div class="col-8 p-2">
+					<h4 class="text-primary">
+						{{ ad.nome }}
+						<i class="float-right fa fa-heart {{ ad.favoritado ? 'text-danger' : 'text-muted' }} "></i>
+					</h4>
+					<span *ngFor="let tag of ad.tags; let isLast = last">
+						 {{ tag }}{{ isLast ? '' : ',&nbsp;' }}
+					</span>
+					<ul class="dashed">
+						<li *ngFor="let detalhes of ad.detalhes">
+							{{ detalhes }}
+						</li>
+					</ul>
+					<button type="button" class="btn btn-link" (click)="ad.id = !ad.id"
+					[attr.aria-expanded]="!ad.id" aria-controls="collapseExample">
+						<i class="fa" aria-hidden="true"></i>
+					</button>
+				</div>
+				<div [ngbCollapse]="ad.id" class="col-12 border-top top-arrow p-2">
+					{{ ad.descricao }}
+				</div>
+				<div class="col-12 text-primary border-top border-bottom p-2">
+					<div class="row">
+						<div class="col-4">
+							<label class="component_1">
+								{{ ad.qtd_portas }} portas
+							</label>
+						</div>
+						<div class="col-4">
+							<label class="component_3">
+								{{ ad.qtd_ocupantes }} pessoas
+							</label>
+						</div>
+						<div class="col-4">
+							<label class="component_8">
+								{{ ad.qtd_malas }} malas
+							</label>
+						</div>
+						<div class="col-4" *ngIf="ad.ar_condicionado">
+							<label class="component_2">
+								Ar-condicionado
+							</label>
+						</div>
+						<div class="col-4" *ngIf="ad.auto">
+							<label class="component_7">
+								Automático
+							</label>
+						</div>
+						<div class="col-4" *ngIf="ad.dir_hidraulica">
+							<label class="component_4">
+								Direção hidráulica
+							</label>
+						</div>
+						<div class="col-4" *ngIf="ad.vid_eletrico">
+							<label class="component_9">
+								Vidro elétrico
+							</label>
+						</div>
+						<div class="col-4" *ngIf="ad.cd_usb">
+							<label class="component_6">
+								CD ou USB
+							</label>
+						</div>
+						<div class="col-4" *ngIf="ad.am_fm">
+							<label class="component_5">
+								Rádio AM/FM
+							</label>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="col-12">Adicionais</div>
 		</div>
-	</div>
-	<div class="col-4 text-gold bg-yellow text-center">
-		<p>
-			TOTAL DA LOCAÇÃO
-		</p>
-		<p class="strikethrough" *ngIf="ad.desconto > 0">
-			de R$ {{ ad.valor_total }}
-		</p>
-		<p *ngIf="ad.desconto > 0">
-			por R$ {{ ad.valor_total - ( ad.valor_total * ( ad.desconto / 100 ) ) }}
-		</p>
-		<p *ngIf="ad.desconto == 0">
-			R$ {{ ad.valor_total }}
-		</p>
-		<p>
-			em até 10x
-		</p>
-		<div class="col-12 rigth-arrow">
-			<button name="submit" type="submit" class="btn btn-block btn-primary">ALUGAR</button>
+		<div class="col-2 text-gold bg-yellow text-center">
+			<p class="m-0">
+				TOTAL DA LOCAÇÃO
+			</p>
+			<p class="strikethrough m-0" *ngIf="ad.desconto > 0">
+				de {{ ad.valor_total * exchangRate | currency: currency.match('_(.*)')[1] }}
+			</p>
+			<p *ngIf="ad.desconto > 0" class="m-1">
+				por {{ ( ( ad.valor_total - ( ad.valor_total * ( ad.desconto / 100 ) ) ) * exchangRate ) | currency: currency.match('_(.*)')[1] }}
+			</p>
+			<p *ngIf="ad.desconto == 0" class="m-1">
+				{{ ad.valor_total * exchangRate | currency: currency.match('_(.*)')[1] }}
+			</p>
+			<p class="m-1">
+				em até 10x
+			</p>
+			<div class="col-12 rigth-arrow m-1">
+				<button name="submit" type="submit" class="btn btn-block btn-primary">ALUGAR</button>
+			</div>
+			<p  class="m-1">
+				Taxas inclusas
+			</p>
 		</div>
-		<p>
-			Taxas inclusas
-		</p>
 	</div>
 </div>
-<div class="row">
-	<ul class="pagination pagination-md">
-		<li class="disabled"><a href="#">«</a></li>
-		<li><a href="#">1</a></li>
-		<li><a href="#">2</a></li>
-		<li><a href="#">3</a></li>
-		<li><a href="#">4</a></li>
-		<li class="active"><a href="#">5</a></li>
-		<li><a href="#">6</a></li>
-		<li><a href="#">7</a></li>
-		<li><a href="#">8</a></li>
-		<li><a href="#">...</a></li>
-		<li><a href="#" rel="next">»</a></li>
-	</ul>
+<hr>
+<div class="has-text-centered">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>

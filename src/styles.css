@@ -1,9 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~ng-pick-datetime/assets/style/picker.min.css";
 
 body {
 	font-family: Oswald;
-	font-size: 12px;
+	font-size: 13px;
 	margin: 50px;
 }
 
@@ -19,53 +18,109 @@ body {
 .text-gold{
 	color: #635109;
 }
-.mb-3 > select{
-	border: none;
-}
-.rigth-arrow:after {
-	z-index: 1;
-	position: absolute;
-	top: 10px;
-	left: -15px;
-	margin-left: 0px;
-	content: '';
-	width: 0;
-	height: 0;
-	border-top: solid 10px transparent;
-	border-bottom: solid 10px transparent;
-	border-left: solid 10px #fff;
-}
-.top-arrow:after {
-	z-index: -1;
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	margin-left: -10px;
-	content:'';
-	width: 0;
-	height: 0;
-	border-top: solid 10px #659EC7;
-	border-left: solid 10px transparent;
-	border-right: solid 10px transparent;
-}
-span{
-	line-break: normal;
-}
-.strikethrough {
-	position: relative;
-}
-.strikethrough:before {
-	position: absolute;
-	content: "";
-	left: 0;
-	top: 50%;
-	right: 0;
-	border-top: 1px solid;
-	border-color: inherit;
 
-	-webkit-transform:rotate(-5deg);
-	-moz-transform:rotate(-5deg);
-	-ms-transform:rotate(-5deg);
-	-o-transform:rotate(-5deg);
-	transform:rotate(-5deg);
+.mb-3 > select{
+	border-left: none;
+}
+
+.bg-white{
+	background-color: #FFF!important;
+}
+
+.btn:focus {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+*::-webkit-input-placeholder {
+	color: #0275d8!important
+}
+*:-moz-placeholder {
+	color: #0275d8!important
+}
+*::-moz-placeholder {
+	color: #0275d8!important
+}
+*:-ms-input-placeholder {
+	color: #0275d8!important
+}
+
+.cl-border{
+	border-top: 1px solid rgb(217, 187, 37);
+	border-bottom: 1px solid rgb(217, 187, 37);
+	border-left: hidden;
+}
+
+.hr-border{
+	border-top: 1px solid rgb(217, 187, 37);
+	border-bottom: 1px solid rgb(217, 187, 37);
+	border-left: hidden;
+	-webkit-border-top-left-radius: 0px;
+	-webkit-border-bottom-left-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+}
+
+.dt-border{
+	border-right: hidden;
+}
+
+.border {
+	border: 1px solid #dee2e6!important
+}
+
+.border-top {
+	border-top: 1px solid #dee2e6!important
+}
+
+.border-right {
+	border-right: 1px solid #dee2e6!important
+}
+
+.border-bottom {
+	border-bottom: 1px solid #dee2e6!important
+}
+
+.border-left {
+										
+	border-left: 1px solid #dee2e6!important
+}
+
+.border-primary {
+	border-color: #007bff!important
+}
+
+.border-secondary {
+	border-color: #6c757d!important
+}
+
+.border-success {
+	border-color: #28a745!important
+}
+
+.border-info {
+	border-color: #17a2b8!important
+}
+
+.border-warning {
+	border-color: #ffc107!important
+}
+
+.border-danger {
+	border-color: #dc3545!important
+}
+
+.border-light {
+	border-color: #f8f9fa!important
+}
+
+.border-dark {
+	border-color: #343a40!important
+}
+
+.border-white {
+	border-color: #fff!important
 }
