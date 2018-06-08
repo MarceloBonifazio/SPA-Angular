@@ -4,6 +4,7 @@ import { Ads } from './ads';
 
 let perPage = ( localStorage.getItem('perPage') ? localStorage.getItem('perPage') : "10" );
 let currency = ( localStorage.getItem('currency') ? localStorage.getItem('currency') : "BRL_BRL" );
+let order = ( localStorage.getItem('order') ? localStorage.getItem('order') : "valor_total" );
 
 @Component({
   selector: 'app-table',
@@ -17,6 +18,7 @@ export class TableComponent implements OnInit {
 	page: number = 1;
 	perPage: string = perPage;
 	currency: string = currency;
+	order: string = order;
 	
 	
   constructor(private ApiService: ApiService) { }
@@ -47,6 +49,10 @@ export class TableComponent implements OnInit {
 	public changePerPage(perPage: string): void {
     localStorage.setItem('perPage', perPage);
     location.reload(true);
+  }
+	
+	public changeOrdering(order: string): void {
+    localStorage.setItem('order', order);
   }
 
 }

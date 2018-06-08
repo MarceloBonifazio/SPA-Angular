@@ -10,6 +10,7 @@ import { TableComponent } from './table.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import localePt from '@angular/common/locales/pt';
+import { SortByPipe } from './sort-by.pipe';
 
 registerLocaleData(localePt);
 
@@ -17,7 +18,8 @@ registerLocaleData(localePt);
   declarations: [
     AppComponent,
     FormComponent,
-    TableComponent
+    TableComponent,
+    SortByPipe
   ],
   imports: [
 		NgbModule.forRoot(),

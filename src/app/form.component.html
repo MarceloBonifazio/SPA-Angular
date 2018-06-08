@@ -20,10 +20,11 @@
 		<div class="col-12 mt-2">
 			<label for="retirada" class="mb-0">RETIRADA</label> 
 			<div class="input-group">
+				<input id="dt_retirada" name="dt_retirada" class="form-control dt-border text-primary">
 				<!--
 					<input [owlDateTimeTrigger]="dt_retirada" [owlDateTime]="dt_retirada"
 						 [min]="min" [max]="max"
-						 [selectMode]="'rangeFrom'" class="form-control dt-border">
+						 [selectMode]="'rangeFrom'" >
 					<owl-date-time [pickerType]="'calendar'" [pickerMode]="'dialog'" #dt_retirada></owl-date-time> 
 				-->
 				<div class="input-group-addon text-primary bg-white cl-border">
@@ -84,6 +85,7 @@
 		<div class="col-12 mt-2">
 			<label for="devolucao" class="mb-0">DEVOLUÇÃO - 8 DIA(S)</label> 
 			<div class="input-group">
+				<input id="dt_devolucao" name="dt_devolucao" class="form-control dt-border text-primary">
 				<!--
 					<input [owlDateTimeTrigger]="dt_devolucao" [owlDateTime]="dt_devolucao"
 						 [min]="min" [max]="max"
@@ -167,50 +169,44 @@
 		</div>
 	</div>
 </div>
+<!--
 
-<hr/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+	<hr/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
 
-<input class="form-control" placeholder="yyyy-mm-dd" name="dp" 
-	[(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-<button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
-	Click!
-</button>
+	<ng-template #t let-date="date" let-focused="focused">
+		<span class="custom-day"
+					[class.focused]="focused"
+					[class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
+					[class.faded]="isHovered(date) || isInside(date)"
+					(mouseenter)="hoveredDate = date"
+					(mouseleave)="hoveredDate = null">
+			{{ date.day }}
+		</span>
+	</ng-template>
 
-<ngb-datepicker #dp (select)="onDateSelection($event)" [dayTemplate]="t">
-</ngb-datepicker>
+	<hr>
 
-<ng-template #t let-date="date" let-focused="focused">
-	<span class="custom-day"
-				[class.focused]="focused"
-				[class.range]="isFrom(date) || isTo(date) || isInside(date) || isHovered(date)"
-				[class.faded]="isHovered(date) || isInside(date)"
-				(mouseenter)="hoveredDate = date"
-				(mouseleave)="hoveredDate = null">
-		{{ date.day }}
-	</span>
-</ng-template>
-
-<hr>
-
-<pre>From: {{ fromDate | json }} </pre>
-<pre>To: {{ toDate | json }} </pre>
+	<pre>From: {{ fromDate | json }} </pre>
+	<pre>To: {{ toDate | json }} </pre>
+	
+-->
 

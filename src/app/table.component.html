@@ -17,8 +17,10 @@
 	<div class="col-12 col-md-6 col-lg-4">
 		<div class="input-group mb-3">
 			<span for="ordering" class="input-group-addon text-primary bg-white">ORDENAR POR:</span> 
-			<select id="ordering" name="ordering" class="select form-control">
-				<option value="price">Menor Preço</option>
+			<select id="ordering" name="ordering" class="select form-control"
+			(change)="changeOrdering($event.target.value)" [(ngModel)]="order">
+				<option value="valor_total">Menor Preço</option>
+				<option value="loja">Loja</option>
 			</select>
 		</div>
 	</div>
@@ -34,7 +36,7 @@
 		</div>
 	</div>
 </div>
-<div class="mt-4" *ngFor="let ad of ads | paginate: { itemsPerPage: perPage, currentPage: page }">
+<div class="mt-4" *ngFor="let ad of ads | paginate: { itemsPerPage: perPage, currentPage: page } | sortBy : order">
 	<div class="row">
 		<div class="col-10 border-top border-left">
 			<div class="row">
@@ -48,10 +50,10 @@
 				<div class="col-8 p-2">
 					<h4 class="text-primary">
 						{{ ad.nome }}
-						<i class="float-right fa fa-heart {{ ad.favoritado ? 'text-danger' : 'text-muted' }} "></i>
+						<i class="float-right fa fa-heart {{ ad.favoritado ? 'text-danger' : 'text-muted' }}" ngbTooltip="{{ ad.favoritado ? 'Desfavoritar' : 'Favoritar' }}"></i>
 					</h4>
 					<span *ngFor="let tag of ad.tags; let isLast = last">
-						 {{ tag }}{{ isLast ? '' : ',&nbsp;' }}
+						 {{ tag }}{{ isLast ? '' : ', ' }}
 					</span>
 					<ul class="dashed">
 						<li *ngFor="let detalhes of ad.detalhes">
@@ -118,7 +120,7 @@
 			</div>
 		</div>
 		<div class="col-2 text-gold bg-yellow text-center">
-			<p class="m-0">
+			<p class="m-1">
 				TOTAL DA LOCAÇÃO
 			</p>
 			<p class="strikethrough m-0" *ngIf="ad.desconto > 0">
@@ -144,5 +146,5 @@
 </div>
 <hr>
 <div class="has-text-centered">
-    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    <pagination-controls (pageChange)="page = $event" previousLabel="..." nextLabel="..."></pagination-controls>
 </div>

@@ -51,7 +51,7 @@
         "Taxas de serviço inclusas"
 			],
       "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis accumsan gravida. Praesent ultricies aliquam leo, ac tempus lectus tempus non. Cras interdum euismod mi, nec fermentum dolor mattis eget. Vivamus maximus semper libero, vel tincidunt augue.",
-      "valor_total": 838,
+      "valor_total": 500,
       "desconto": 0,
 			"qtd_ocupantes": 5,
 			"qtd_portas": 4,
@@ -60,6 +60,38 @@
 			"dir_hidraulica": false,
 			"auto": true,
 			"vid_eletrico": false,
+			"cd_usb": false,
+			"am_fm": false
+    },	
+		{
+      "id": 3,
+			"favoritado": false,
+      "loja": "alamo",
+			"nome": "CARRO ECONÔMICO COM AR",
+      "imagem": "assets/car2.png",
+      "cod_taxa": "IFMR",
+      "tags": [
+        "Chevrolet Celta",
+        "Ford Fiesta",
+        "Vw Gol",
+        "ChevroletFiat ou Similar"
+      ],
+			"detalhes": [
+				"Quilometragem livre",
+        "Seguro total do veículo",
+        "Seguro a terceiros",
+        "Taxas de serviço inclusas"
+			],
+      "descricao": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras mollis accumsan gravida. Praesent ultricies aliquam leo, ac tempus lectus tempus non. Cras interdum euismod mi, nec fermentum dolor mattis eget. Vivamus maximus semper libero, vel tincidunt augue.",
+      "valor_total": 838,
+      "desconto": 10,
+			"qtd_ocupantes": 5,
+			"qtd_portas": 4,
+			"qtd_malas": 3,
+			"ar_condicionado": true,
+			"dir_hidraulica": false,
+			"auto": true,
+			"vid_eletrico": true,
 			"cd_usb": false,
 			"am_fm": false
     }
