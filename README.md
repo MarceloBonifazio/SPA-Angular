@@ -4,7 +4,7 @@ Dependencias para a instalação [node](https://nodejs.org/en/download/) e [angu
 
 1. Baixe o repositório via linha de comando, [zip](https://github.com/MarceloBonifazio/QueroSerBtime/archive/master.zip) ou Client Git.
    1. Linha de comando
-      1. ``git clone https://github.com/MarceloBonifazio/SPA-Angular folder-name``
+      1. ``git clone https://github.com/MarceloBonifazio/QueroSerBtime folder-name``
    1. Zip
       1. Baixe e descompacte a pasta aonde preferir
 1. Instale as dependências de pacotes
